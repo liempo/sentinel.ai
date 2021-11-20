@@ -63,26 +63,10 @@ function DashboardCard01() {
 
       <div className="p-5">
         <header className="flex justify-between items-start mb-2">
-          {/* Icon */}
-          <img src={Icon} width="32" height="32" alt="Icon 01" />
-          {/* Menu button */}
-          <EditMenu className="relative inline-flex">
-            <li>
-              <Link className="font-medium text-sm text-gray-600 hover:text-gray-800 flex py-1 px-3" to="#0">Option 1</Link>
-            </li>
-            <li>
-              <Link className="font-medium text-sm text-gray-600 hover:text-gray-800 flex py-1 px-3" to="#0">Option 2</Link>
-            </li>
-            <li>
-              <Link className="font-medium text-sm text-red-500 hover:text-red-600 flex py-1 px-3" to="#0">Remove</Link>
-            </li>
-          </EditMenu>
         </header>
-        <h2 className="text-lg font-semibold text-gray-800 mb-2">Acme Plus</h2>
-        <div className="text-xs font-semibold text-gray-400 uppercase mb-1">Sales</div>
+        <h2 className="text-lg font-semibold text-gray-600 mb-2">Suspicious Activity</h2>
         <div className="flex items-start">
-          <div className="text-3xl font-bold text-gray-800 mr-2">$24,780</div>
-          <div className="text-sm font-semibold text-white px-1.5 bg-green-500 rounded-full">+49%</div>
+          <div className="text-3xl font-bold text-red-600 mr-2">2</div>
         </div>
       </div>
     </div>
