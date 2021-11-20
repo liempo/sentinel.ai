@@ -36,7 +36,6 @@ function Header({
           {/* Header: Right side */}
           <div className="flex items-center">
 
-            <SearchModal />
             <Notifications />
             <Help />
             {/*  Divider */}
