@@ -1,4 +1,4 @@
-# Free Tailwind dashboard template
+# Sentinel.ai
 
 ![Mosaic TailwindCSS template preview](https://user-images.githubusercontent.com/2683512/115404502-ad322d80-a1ed-11eb-91c0-1aa79b0949f0.png)
 
