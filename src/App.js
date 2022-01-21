@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { Switch, Route, useLocation } from "react-router-dom"
 
 import "./css/style.scss"
@@ -12,6 +12,7 @@ import Login from "./pages/Login"
 function App() {
   const startTime = new Date()
   const location = useLocation()
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     document.querySelector("html").style.scrollBehavior = "auto"
@@ -24,8 +25,15 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          {/* <Login/> */}
-          <Dashboard starttime={startTime} />
+          {!isLoggedIn ? (
+            <Login
+              onlogin={() => {
+                setIsLoggedIn(true)
+              }}
+            />
+          ) : (
+            <Dashboard starttime={startTime} />
+          )}
         </Route>
       </Switch>
     </>
