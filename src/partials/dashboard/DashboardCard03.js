@@ -63,9 +63,9 @@ function DashboardCard03() {
       <div className="p-5">
         <header className="flex justify-between items-start mb-2">
           {/* Icon */}
-          <img src={Icon} width="32" height="32" alt="Icon 03" />
+          {/* <img src={Icon} width="32" height="32" alt="Icon 03" /> */}
           {/* Menu button */}
-          <EditMenu className="relative inline-flex">
+          {/* <EditMenu className="relative inline-flex">
             <li>
               <Link className="font-medium text-sm text-gray-600 hover:text-gray-800 flex py-1 px-3" to="#0">Option 1</Link>
             </li>
@@ -75,13 +75,13 @@ function DashboardCard03() {
             <li>
               <Link className="font-medium text-sm text-red-500 hover:text-red-600 flex py-1 px-3" to="#0">Remove</Link>
             </li>
-          </EditMenu>
+          </EditMenu> */}
         </header>
-        <h2 className="text-lg font-semibold text-gray-800 mb-2">Acme Professional</h2>
-        <div className="text-xs font-semibold text-gray-400 uppercase mb-1">Sales</div>
+        {/* <h2 className="text-lg font-semibold text-gray-800 mb-2">Acme Professional</h2>
+        <div className="text-xs font-semibold text-gray-400 uppercase mb-1">Sales</div> */}
         <div className="flex items-start">
-          <div className="text-3xl font-bold text-gray-800 mr-2">$9,962</div>
-          <div className="text-sm font-semibold text-white px-1.5 bg-green-500 rounded-full">+49%</div>
+          {/* <div className="text-3xl font-bold text-gray-800 mr-2">$9,962</div>
+          <div className="text-sm font-semibold text-white px-1.5 bg-green-500 rounded-full">+49%</div> */}
         </div>
       </div>
     </div>

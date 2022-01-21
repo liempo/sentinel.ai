@@ -51,7 +51,7 @@ function WelcomeBanner() {
 
       {/* Content */}
       <div className="relative">
-        <h1 className="text-2xl md:text-3xl text-gray-800 font-bold mb-1">{time.getHours()< 12 ? "Good morning, User":"Good afternoon, User!"}👋</h1>
+        <h1 className="text-2xl md:text-3xl text-gray-800 font-bold mb-1">{time.getHours()< 12 ? "Good morning, User":"Good afternoon, User","Good evening, User!"}👋</h1>
         <p>Here is what’s happening with your house today:</p>
       </div>
 

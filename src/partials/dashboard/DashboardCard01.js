@@ -64,7 +64,7 @@ function DashboardCard01() {
       <div className="p-5">
         <header className="flex justify-between items-start mb-2">
         </header>
-        <h2 className="text-lg font-semibold text-gray-600 mb-2">Suspicious Activity</h2>
+        <h2 className="text-lg font-semibold text-gray-600 mb-2">Suspicious Activity: </h2>
         <div className="flex items-start">
           <div className="text-3xl font-bold text-red-600 mr-2">2</div>
         </div>

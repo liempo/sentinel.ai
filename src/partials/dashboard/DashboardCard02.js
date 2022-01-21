@@ -6,8 +6,8 @@ import EditMenu from '../EditMenu';
 // Import utilities
 import { tailwindConfig, hexToRGB } from '../../utils/Utils';
 
-function DashboardCard02() {
-
+function DashboardCard02(props) {
+  const [time, setTime] = React.useState(new Date())
   const chartData = {
     labels: [
       '12-01-2020', '01-01-2021', '02-01-2021',
@@ -58,34 +58,36 @@ function DashboardCard02() {
     ],
   };
 
+  React.useEffect(()=>{
+    setTimeout (()=>{
+      setTime (new Date()) 
+    },1000)
+  })
+
   return (
     <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-gray-200">
       <div className="p-5">
         <header className="flex justify-between items-start mb-2">
-          {/* Icon */}
-          <img src={Icon} width="32" height="32" alt="Icon 02" />
-          {/* Menu button */}
-          <EditMenu className="relative inline-flex">
-            <li>
-              <Link className="font-medium text-sm text-gray-600 hover:text-gray-800 flex py-1 px-3" to="#0">Option 1</Link>
-            </li>
-            <li>
-              <Link className="font-medium text-sm text-gray-600 hover:text-gray-800 flex py-1 px-3" to="#0">Option 2</Link>
-            </li>
-            <li>
-              <Link className="font-medium text-sm text-red-500 hover:text-red-600 flex py-1 px-3" to="#0">Remove</Link>
-            </li>
-          </EditMenu>
+          
         </header>
-        <h2 className="text-lg font-semibold text-gray-800 mb-2">Acme Advanced</h2>
-        <div className="text-xs font-semibold text-gray-400 uppercase mb-1">Sales</div>
+        <h2 className="text-lg font-semibold text-gray-600 mb-2">Up Time: </h2>
         <div className="flex items-start">
-          <div className="text-3xl font-bold text-gray-800 mr-2">$17,489</div>
-          <div className="text-sm font-semibold text-white px-1.5 bg-yellow-500 rounded-full">-14%</div>
+        <div className="text-3xl font-bold text-red-600 mr-2">{format((time-props.starttime)/1000)} </div>
         </div>
       </div>
     </div>
   );
+}
+
+function format(seconds){
+  function pad(s){
+    return (s < 10 ? '0' : '') + s;
+  }
+  var hours = Math.floor(seconds / (60*60));
+  var minutes = Math.floor(seconds % (60*60) / 60);
+  var seconds = Math.floor(seconds % 60);
+
+  return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds);
 }
 
 export default DashboardCard02;

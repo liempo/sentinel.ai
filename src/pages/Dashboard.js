@@ -9,7 +9,7 @@ import DashboardCard04 from '../partials/dashboard/DashboardCard04';
 import DashboardCard05 from '../partials/dashboard/DashboardCard05';
 import Banner from '../partials/Banner';
 
-function Dashboard() {
+function Dashboard(props) {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -34,7 +34,7 @@ function Dashboard() {
               {/* Line chart (Acme Plus) */}
               <DashboardCard01 />
               {/* Line chart (Acme Advanced) */}
-              <DashboardCard02 />
+              <DashboardCard02 starttime={props.starttime}/>
               {/* Line chart (Acme Professional) */}
               <DashboardCard03 />
               {/* Bar chart (Direct vs Indirect) */}

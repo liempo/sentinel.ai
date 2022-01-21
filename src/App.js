@@ -12,9 +12,11 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
 
 function App() {
 
+  const startTime = new Date ();
   const location = useLocation();
 
   useEffect(() => {
@@ -28,7 +30,8 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          <Dashboard />
+          <Login/>
+          {/* <Dashboard starttime={startTime} /> */}
         </Route>
       </Switch>
     </>
