@@ -6,7 +6,6 @@ import SuspiciousActivityCard from "../partials/dashboard/SuspiciousActivityCard
 import UpTimeCard from "../partials/dashboard/UpTimeCard"
 import ActiveCamerasCard from "../partials/dashboard/ActiveCamerasCard"
 import CameraCard from "../partials/dashboard/CameraCard"
-import Banner from "../partials/Banner"
 
 function Dashboard(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -33,7 +32,6 @@ function Dashboard(props) {
           </div>
         </main>
 
-        <Banner />
       </div>
     </div>
   )
