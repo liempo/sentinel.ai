@@ -1,0 +1,10 @@
+{
+    "editor.formatOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "prettier.semi": false,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.tabSize": 2,
+    "prettier.trailingComma": "none"
+  }
