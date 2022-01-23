@@ -6,6 +6,7 @@ import SuspiciousActivityCard from "../partials/dashboard/SuspiciousActivityCard
 import UpTimeCard from "../partials/dashboard/UpTimeCard"
 import ActiveCamerasCard from "../partials/dashboard/ActiveCamerasCard"
 import CameraCard from "../partials/dashboard/CameraCard"
+import SettingCard from "../partials/dashboard/SettingCard"
 
 function Dashboard(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -28,10 +29,10 @@ function Dashboard(props) {
               <UpTimeCard starttime={props.starttime} />
               <ActiveCamerasCard />
               <CameraCard />
+              <SettingCard />
             </div>
           </div>
         </main>
-
       </div>
     </div>
   )

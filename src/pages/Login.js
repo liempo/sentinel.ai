@@ -54,6 +54,7 @@ function Login(props) {
               }}
             />
           </div>
+
           <span class="text-sm text-gray-700 inline-block mt-4 hover:text-indigo-600 hover:underline hover:cursor-pointer transition duration-200">
             Forget password
           </span>
@@ -63,7 +64,6 @@ function Login(props) {
               if (email == "admin" && password == "admin") {
                 setIsLoggedIn(true)
               } else {
-                alert("Tanginamo")
                 setIsLoggedIn(false)
               }
             }}
