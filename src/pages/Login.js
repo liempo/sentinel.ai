@@ -3,7 +3,7 @@ import UserAvatar from "../images/logo.png"
 
 function Login(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [email, setEmail] = useState("")
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   useEffect(() => {
     if (isLoggedIn) {
@@ -27,14 +27,14 @@ function Login(props) {
               class="mr-4 text-lg font-semibold text-gray-700 font-bold inline-block mb-2"
               for="email"
             >
-              Email address
+              Username
             </label>
             <input
-              type="email"
+              type="username"
               class="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded"
-              placeholder="@email"
+              placeholder="Username"
               onChange={(event) => {
-                setEmail(event.target.value)
+                setUsername(event.target.value)
               }}
             />
           </div>
@@ -61,7 +61,7 @@ function Login(props) {
           <button
             class="w-full mt-6 text-indigo-50 text-lg font-semibold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300"
             onClick={() => {
-              if (email == "admin" && password == "admin") {
+              if (username == "admin" && password == "admin") {
                 setIsLoggedIn(true)
               } else {
                 setIsLoggedIn(false)
