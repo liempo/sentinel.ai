@@ -1,7 +1,7 @@
 import { useState } from "react"
 
-function SettingCard() {
-  const [threshold, setThreshold] = useState(0)
+function SettingCard(props) {
+  const [threshold, setThreshold] = useState(0.1)
 
   return (
     <div className="flex-col col-span-full sm:col-span-3 bg-white shadow-lg rounded-sm= border border-gray-200">
@@ -18,6 +18,9 @@ function SettingCard() {
               type="checkbox"
               role="switch"
               id="cameraSwitch"
+              onChange={(e) => {
+                props.onCameraOnChanged(e.target.checked)
+              }}
             />
           </div>
         </div>
@@ -41,7 +44,7 @@ function SettingCard() {
         <div class="items-center">
           <div className="flex justify-between items-center">
             <h2 className="text-md font-semibold text-gray-800">Threshold:</h2>
-            <h3 className="text-sm font-semibold text-red-600">{threshold}%</h3>
+            <h3 className="text-sm font-semibold text-red-600">{threshold}</h3>
           </div>
           <div className="items-center py-5 w-100">
             <input
@@ -49,11 +52,12 @@ function SettingCard() {
               type="range"
               id="thresholdSwitch"
               min="0"
-              max="100"
-              step="0"
+              max="1"
+              step="0.1"
               value={threshold}
               onChange={(e) => {
                 setThreshold(e.target.value)
+                props.onThresholdOnChanged(e.target.value)
               }}
             />
           </div>

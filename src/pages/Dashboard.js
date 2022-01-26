@@ -11,6 +11,10 @@ import SettingCard from "../partials/dashboard/SettingCard"
 function Dashboard(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
+  const [cameraOpen, setCameraOpen] = useState(false)
+
+  const [threshold, setThreshold] = useState(0.1)
+
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Content area */}
@@ -32,8 +36,16 @@ function Dashboard(props) {
               <SuspiciousActivityCard />
               <UpTimeCard starttime={props.starttime} />
               <ActiveCamerasCard />
-              <CameraCard />
-              <SettingCard />
+              <CameraCard isCameraOpen={cameraOpen} threshold={threshold} />
+              <SettingCard
+                onThresholdOnChanged={(value) => {
+                  setThreshold(value)
+                }}
+                onCameraOnChanged={(checked) => {
+                  setCameraOpen(checked)
+                  console.log(checked)
+                }}
+              />
             </div>
           </div>
         </main>
