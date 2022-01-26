@@ -32,7 +32,7 @@ function App() {
               }}
             />
           ) : (
-            <Dashboard starttime={startTime} />
+            <Dashboard starttime={startTime} setIsLoggedIn={setIsLoggedIn} />
           )}
         </Route>
       </Switch>

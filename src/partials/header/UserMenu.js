@@ -4,26 +4,26 @@ import Transition from "../../utils/Transition"
 
 import Logo from "../../images/logo.png"
 
-function UserMenu() {
+function UserMenu(props) {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const trigger = useRef(null)
   const dropdown = useRef(null)
 
   // close on click outside
-  useEffect(() => {
-    const clickHandler = ({ target }) => {
-      if (
-        !dropdownOpen ||
-        dropdown.current.contains(target) ||
-        trigger.current.contains(target)
-      )
-        return
-      setDropdownOpen(false)
-    }
-    document.addEventListener("click", clickHandler)
-    return () => document.removeEventListener("click", clickHandler)
-  })
+  // useEffect(() => {
+  //   const clickHandler = ({ target }) => {
+  //     if (
+  //       !dropdownOpen ||
+  //       dropdown.current.contains(target) ||
+  //       trigger.current.contains(target)
+  //     )
+  //       return
+  //     setDropdownOpen(false)
+  //   }
+  //   document.addEventListener("click", clickHandler)
+  //   return () => document.removeEventListener("click", clickHandler)
+  // })
 
   // close if the esc key is pressed
   useEffect(() => {
@@ -88,7 +88,10 @@ function UserMenu() {
               <Link
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
                 to="/"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                onClick={() => {
+                  // setDropdownOpen(false)
+                  props.setIsLoggedIn(false)
+                }}
               >
                 Sign Out
               </Link>

@@ -11,7 +11,7 @@ function SettingCard() {
 
       <header className="px-5 py-4">
         <div class="flex justify-between items-center">
-          <h2 className="text-md font-semibold text-gray-800">Camera</h2>
+          <h2 className="text-md font-semibold text-gray-800">Camera 1</h2>
           <div class="form-check form-switch">
             <input
               class="form-check-input appearance-none w-9 rounded-full float-left h-5 align-top text-green-600 bg-white bg-no-repeat bg-contain border-gray-700 focus:outline-none cursor-pointer shadow-sm"
@@ -25,7 +25,7 @@ function SettingCard() {
 
       <header className="px-5 py-4">
         <div class="flex justify-between items-center">
-          <h2 className="text-md font-semibold text-gray-800">Record</h2>
+          <h2 className="text-md font-semibold text-gray-800">Alarm</h2>
           <div class="form-check form-switch">
             <input
               class="form-check-input appearance-none w-9 rounded-full float-left h-5 align-top text-green-600 bg-white bg-no-repeat bg-contain border-gray-700 focus:outline-none cursor-pointer shadow-sm"
