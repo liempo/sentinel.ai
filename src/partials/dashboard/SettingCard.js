@@ -43,7 +43,7 @@ function SettingCard() {
             <h2 className="text-md font-semibold text-gray-800">Threshold:</h2>
             <h3 className="text-sm font-semibold text-red-600">{threshold}%</h3>
           </div>
-          <div class="items-center py-5 w-100">
+          <div className="items-center py-5 w-100">
             <input
               className="w-full"
               type="range"
