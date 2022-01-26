@@ -1,5 +1,4 @@
 import PoseNet from "react-posenet"
-import { useState } from "react"
 
 function CameraCard() {
   return (
