@@ -57,15 +57,13 @@ function Login(props) {
             />
           </div>
 
-          {/* <span class="text-sm text-gray-700 inline-block mt-4 hover:text-indigo-600 hover:underline hover:cursor-pointer transition duration-200">
-            Forget password
-          </span> */}
           <button
             class="w-full mt-6 text-indigo-50 text-lg font-semibold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300"
             onClick={() => {
               if (username == "admin" && password == "admin") {
                 setIsLoggedIn(true)
               } else {
+                alert("Wrong email or password")
                 setIsLoggedIn(false)
               }
             }}
