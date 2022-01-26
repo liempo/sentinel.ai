@@ -1,7 +1,5 @@
-import React from "react"
-
-// Import utilities
-import { tailwindConfig } from "../../utils/Utils"
+import PoseNet from "react-posenet"
+import { useState } from "react"
 
 function CameraCard() {
   return (
@@ -9,6 +7,9 @@ function CameraCard() {
       <header className="px-5 py-4 border-b border-gray-100">
         <h2 className="text-lg font-semibold text-gray-800">Camera 1: </h2>
       </header>
+      <div className="h-3/4 p-8">
+        <PoseNet className="m-auto" />
+      </div>
     </div>
   )
 }
