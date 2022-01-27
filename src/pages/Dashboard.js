@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import Header from "../partials/Header"
 import WelcomeBanner from "../partials/dashboard/WelcomeBanner"
@@ -14,6 +14,8 @@ function Dashboard(props) {
   const [cameraOpen, setCameraOpen] = useState(false)
 
   const [threshold, setThreshold] = useState(0.1)
+
+  const [activeCameras, setActiveCameras] = useState(0)
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -35,7 +37,7 @@ function Dashboard(props) {
             <div className="grid grid-cols-12 gap-6">
               <SuspiciousActivityCard />
               <UpTimeCard starttime={props.starttime} />
-              <ActiveCamerasCard />
+              <ActiveCamerasCard isActiveCameraOpen={activeCameras} />
               <CameraCard isCameraOpen={cameraOpen} threshold={threshold} />
               <SettingCard
                 onThresholdOnChanged={(value) => {
@@ -43,6 +45,11 @@ function Dashboard(props) {
                 }}
                 onCameraOnChanged={(checked) => {
                   setCameraOpen(checked)
+                  if (checked) {
+                    setActiveCameras(activeCameras + 1)
+                  } else {
+                    setActiveCameras(activeCameras - 1)
+                  }
                   console.log(checked)
                 }}
               />
