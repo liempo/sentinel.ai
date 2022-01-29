@@ -9,7 +9,7 @@ function SuspiciousActivityCard() {
           Suspicious Activity:{" "}
         </h2>
         <div className="flex items-start">
-          <div className="text-3xl font-bold text-red-600 mr-2">2</div>
+          <div className="text-3xl font-bold text-red-600 mr-2">0</div>
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@ function SettingCard(props) {
         </div>
       </header>
 
-      <header className="px-5 py-4">
+      {/* <header className="px-5 py-4">
         <div class="flex justify-between items-center">
           <h2 className="text-md font-semibold text-gray-800">Alarm</h2>
           <div class="form-check form-switch">
@@ -38,7 +38,7 @@ function SettingCard(props) {
             />
           </div>
         </div>
-      </header>
+      </header> */}
 
       <header className="px-5 py-4">
         <div class="items-center">
