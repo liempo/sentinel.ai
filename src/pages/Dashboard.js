@@ -42,8 +42,8 @@ function Dashboard(props) {
 
       const susElapsed = (newTime - lastSuspiciousTime) / 1000
       if (susElapsed > 30) {
+        setLastSuspiciousTime(new Date())
         setSuspiciousCount(suspiciousCount + 1)
-        setLastSuspiciousTime(newTime)
       }
     }, 1000)
   })
