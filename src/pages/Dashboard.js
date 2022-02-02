@@ -8,6 +8,16 @@ import ActiveCamerasCard from "../partials/dashboard/ActiveCamerasCard"
 import CameraCard from "../partials/dashboard/CameraCard"
 import SettingCard from "../partials/dashboard/SettingCard"
 
+const format = (seconds) => {
+  function pad(s) {
+    return (s < 10 ? "0" : "") + s
+  }
+  var hours = Math.floor(seconds / (60 * 60))
+  var minutes = Math.floor((seconds % (60 * 60)) / 60)
+  var seconds = Math.floor(seconds % 60)
+  return pad(hours) + ":" + pad(minutes) + ":" + pad(seconds)
+}
+
 function Dashboard(props) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
@@ -16,6 +26,27 @@ function Dashboard(props) {
   const [threshold, setThreshold] = useState(0.1)
 
   const [activeCameras, setActiveCameras] = useState(0)
+
+  const [uptime, setUptime] = useState("")
+
+  const [suspiciousCount, setSuspiciousCount] = useState(0)
+
+  const [lastSuspiciousTime, setLastSuspiciousTime] = useState(new Date())
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      const newTime = new Date()
+      const elapsed = (newTime - props.starttime) / 1000
+      console.log(props.uptime)
+      setUptime(format(elapsed))
+
+      const susElapsed = (newTime - lastSuspiciousTime) / 1000
+      if (susElapsed > 30) {
+        setSuspiciousCount(suspiciousCount + 1)
+        setLastSuspiciousTime(newTime)
+      }
+    }, 1000)
+  })
 
   return (
     <div className="flex h-screen overflow-hidden">
@@ -35,8 +66,8 @@ function Dashboard(props) {
 
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
-              <SuspiciousActivityCard />
-              <UpTimeCard starttime={props.starttime} />
+              <SuspiciousActivityCard count={suspiciousCount} />
+              <UpTimeCard uptime={uptime} />
               <ActiveCamerasCard isActiveCameraOpen={activeCameras} />
               <CameraCard isCameraOpen={cameraOpen} threshold={threshold} />
               <SettingCard

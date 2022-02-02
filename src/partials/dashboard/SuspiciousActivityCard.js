@@ -1,6 +1,6 @@
 import React from "react"
 
-function SuspiciousActivityCard() {
+function SuspiciousActivityCard(props) {
   return (
     <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-gray-200">
       <div className="p-5">
@@ -9,7 +9,9 @@ function SuspiciousActivityCard() {
           Suspicious Activity:{" "}
         </h2>
         <div className="flex items-start">
-          <div className="text-3xl font-bold text-red-600 mr-2">0</div>
+          <div className="text-3xl font-bold text-red-600 mr-2">
+            {props.count}
+          </div>
         </div>
       </div>
     </div>

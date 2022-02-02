@@ -1,7 +1,7 @@
 import React from "react"
 
 function WelcomeBanner() {
-  const [time, setTime] = React.useState(new Date())
+  const time = new Date()
 
   return (
     <div className="relative bg-indigo-200 p-4 sm:p-6 rounded-sm overflow-hidden mb-8">
